@@ -1,4 +1,6 @@
 #!/usr/bin/python3
-def print_list_integer(my_list=[]):
-    for i in my_list:
-        print("{:d}".format(int(i)))
+def element_at(my_list, idx):
+    if idx < 0 or idx >= len(my_list):
+        return None
+    else:
+        return my_list[idx]
