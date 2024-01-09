@@ -2,9 +2,7 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <assert.h>
-#include <pyport.h>
-#include <object.h>
-#include <listobject.h>
+#include <Python.h>
 
 /**
  *print_python_list_info - check the code for
@@ -13,24 +11,17 @@
  */
 void print_python_list_info(PyObject *p)
 {
-	PyListObject *list;
-	Py_ssize_t i;
-	PyObject *element;
+	int i, size, allocated;
 
-	list = (PyListObject *)p;
-	if (!PyList_Check(p))
+	size = Py_SIZE(p);
+	allocated = ((PyListObject *)p)->allocated;
+
+	printf("[*] Size of the Python List = %d\n", size);
+	printf("[*] Allocated = %d\n", allocated);
+	for (i = 0; i < size; i++)
 	{
-		printf("Error: Not a PyListObject\n");
-		return;
+		const char *type = Py_TYPE(PyList_GetItem(p, i))->tp_name;
+
+		printf("Element %d: %s\n", i, type);
 	}
-
-	printf("[*] Size of the Python List: %zd\n", PyList_GET_SIZE(list));
-	printf("[*] Allocated = %zd\n", list->allocated);
-
-	for (i = 0; i < PyList_GET_SIZE(list); i++)
-	{
-		element = PyList_GET_ITEM(list, i);
-		printf("Element %zd:  %s\n", i, Py_TYPE(element)->tp_name);
-	}
-
 }
