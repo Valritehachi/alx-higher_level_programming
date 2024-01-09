@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <assert.h>
-#include <pyport.h>
 #include <object.h>
 #include <listobject.h>
 
