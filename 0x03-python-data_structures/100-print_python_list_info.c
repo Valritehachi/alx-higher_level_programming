@@ -3,6 +3,7 @@
 #include <stddef.h>
 #include <assert.h>
 #include <Python.h>
+#include <listobject.h>
 
 /**
  *print_python_list_info - check the code for
@@ -13,7 +14,12 @@ void print_python_list_info(PyObject *p)
 {
 	int i, size, allocated;
 
-	size = Py_SIZE(p);
+	if (!PyList_Check(p))
+	{
+		return;
+	}
+
+	size = (int)PyList_Size(p);
 	allocated = ((PyListObject *)p)->allocated;
 
 	printf("[*] Size of the Python List = %d\n", size);
