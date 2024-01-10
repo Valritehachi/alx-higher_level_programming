@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <assert.h>
-#include <Python.h>
+#include <object.h>
+#include <listobject.h>
 
 /**
  *print_python_list_info - check the code for
