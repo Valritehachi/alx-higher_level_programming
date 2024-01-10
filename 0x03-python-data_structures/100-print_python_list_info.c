@@ -1,10 +1,8 @@
 #include <unistd.h>
-#include <time.h>
 #include <stdio.h>
 #include <stddef.h>
 #include <assert.h>
 #include <Python.h>
-#include <listobject.h>
 
 /**
  *print_python_list_info - check the code for
