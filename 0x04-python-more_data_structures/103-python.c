@@ -11,8 +11,8 @@
 void print_python_bytes(PyObject *p)
 {
 	long int size;
-	int y;
 	char *trying_str = NULL;
+	int y;
 
 	printf("[.] bytes object info\n");
 	if (!PyBytes_Check(p))
@@ -38,8 +38,8 @@ PyBytes_AsStringAndSize(p, &trying_str, &size);
  */
 void print_python_list(PyObject *p)
 {
-	long int size = PyList_Size(p);
 	int y;
+	long int size = PyList_Size(p);
 	PyListObject *list = (PyListObject *)p;
 	const char *type;
 
