@@ -88,6 +88,7 @@ void print_python_list(PyObject *p)
 				print_python_float(item);
 			}
 		}
+	}
 	else
 	{
 		printf("  [ERROR] Invalid List Object\n");
