@@ -1,0 +1,43 @@
+The ``3-say_my_name`` module
+======================
+
+Using ``say_my_name``
+-------------------
+
+Importing the function from the module:
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+# Test Case 1: Valid input with both first and last names
+say_my_name("John", "Doe")
+
+# Test Case 2: Valid input with only the first name
+say_my_name("Alice")
+
+# Test Case 3: Valid input with an empty first name and last name
+say_my_name("", "")
+
+# Test Case 4: Valid input with a long first name and last name
+say_my_name("Alexander", "Hamilton")
+
+# Test Case 5: Invalid input with first name as an integer
+try:
+    say_my_name(123, "Smith")
+except TypeError as e:
+    print(f"Error: {e}")
+
+# Test Case 6: Invalid input with last name as a float
+try:
+    say_my_name("Jane", 45.67)
+except TypeError as e:
+    print(f"Error: {e}")
+
+# Test Case 7: Invalid input with both first and last names as integers
+try:
+    say_my_name(123, 456)
+except TypeError as e:
+    print(f"Error: {e}")
+# Test Case 8: Checking for more than 2 args
+>>> say_my_name("Hello", "World", "hi")
+Traceback (most recent call last):
+...
+TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
