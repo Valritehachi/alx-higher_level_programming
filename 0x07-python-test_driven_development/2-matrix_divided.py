@@ -8,7 +8,10 @@ Functions:
     - add_integer(a, b=98): divides two numbers and returns the result.
 
 """
+
+
 def matrix_divided(matrix, div):
+
     """
     divs two numbers and returns the result.
     Args:
@@ -29,6 +32,7 @@ def matrix_divided(matrix, div):
 
     new_matrix = []
     last_row_size = 0
+    error_1 = "matrix must be a matrix (list of lists) of integers/floats"
     for row in matrix:
         if row is None or (not isinstance(row, list)):
             raise TypeError(matrix_error)
@@ -39,9 +43,8 @@ def matrix_divided(matrix, div):
         new_row = []
         for item in row:
             if not isinstance(item, (int, float)):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-            item = item/div 
+                raise TypeError(error_1)
+            item = item/div
             new_row.append(round(item, 2))
         new_matrix.append(new_row)
     return new_matrix
-

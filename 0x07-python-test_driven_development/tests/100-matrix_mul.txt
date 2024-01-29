@@ -1,0 +1,46 @@
+The ``100-matrix_mul`` module
+======================
+
+Using ``matrix_mul``
+-------------------
+
+Importing the function from the module:
+>>> matrix_mul = __import__("100-matrix_mul").matrix_mul
+
+divides two integers and returns the result.
+
+Examples:
+# Test case 1: Basic multiplication
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+[[7, 10], [15, 22]]
+
+# Test case 2: Division with floating-point numbers
+>>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+[[13, 16]]
+
+ Test case 4: 
+>>> matrix_mul([[10, 20],[30, 40]], [[]])
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+
+# Test case 5: Empty matrix (should raise a TypeError)
+>>> matrix_mul([], 2)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Te:st case 6: Matrix with rows of different lengths (should raise a TypeError)
+>>> matrix_mul([[1, 2, 3],[4, 5],[6, 7, 8]], 3)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+
+# Test case 6: Matrix with rows of different lengths (should raise a TypeError)
+>>> matrix_mul([[1, 2, 3],'A',[6, 7, 8]], 3)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+

@@ -17,6 +17,6 @@ def text_indentation(text):
         else:
             last_char = c
 
-    while( len(output) > 0 and output[-1] == ' '):
+    while(len(output) > 0 and output[-1] == ' '):
         output = output[0:-1]
     print(output, end="")
