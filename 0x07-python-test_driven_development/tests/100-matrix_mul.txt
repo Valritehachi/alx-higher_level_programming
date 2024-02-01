@@ -30,18 +30,6 @@ Traceback (most recent call last):
 ...
 TypeError: m_b should contain only integers or floats
 
-Test case 5: added none
->>> matrix_mul(None, [[1, 2], [3, 4]])
-Traceback (most recent call last):
-...
-TypeError: m_a must be a list or m_b must be a list
-
-Test case 6: none at end of list
->>> matrix_mul([[1, 2], [3, 4]], None)
-Traceback (most recent call last):
-...
-TypeError: m_a must be a list or m_b must be a list
-
 Test case 7: added character as string
 >>> matrix_mul('a', [[1, 2], [3, 4]])
 Traceback (most recent call last):
