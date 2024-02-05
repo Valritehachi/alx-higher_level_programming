@@ -3,7 +3,7 @@
 
 
 class MyInt(int):
-
+    """ class definition"""
     def __init__(self, value):
         """innitialize value"""
         self = value
