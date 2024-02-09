@@ -93,12 +93,17 @@ class Rectangle(Base):
 
     def display(self):
         """display"""
-        row = ['#'] * self.__width
+        spaces = [' '] * self.__x
+        hashes = ['#'] * self.__width
+        row = spaces + hashes
         row_str = "".join(row)
+        for i in range(self.__y):
+            print("")
         for i in range(self.__height):
             print(row_str)
     
     def __str__(self):
+        """str"""
         lines = []
         lines.append("[Rectangle]")
         id = self.id
@@ -108,3 +113,30 @@ class Rectangle(Base):
         lines.append(f"{self.__width}/{self.__height}")
 
         return " ".join(lines)
+
+    def update (self, *args):
+        """innitializer"""
+        args = list(args)
+
+        if len(args) == 0:
+            return
+
+        id = args.pop(0)
+        self.id = id
+
+        if len(args) == 0:
+            return 
+
+        self.width = args.pop(0)
+        if len(args) == 0:
+            return
+        self.height = args.pop(0)
+        if len(args) == 0:
+            return
+        self.x = args.pop(0)
+  
+        if len(args) == 0:
+            return
+        self.y = args.pop(0)
+
+

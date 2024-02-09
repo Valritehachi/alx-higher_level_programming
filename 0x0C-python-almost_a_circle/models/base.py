@@ -15,3 +15,12 @@ class Base:
     def id(self):
         """Getter method for the 'id' attribute."""
         return self._id
+
+    @id.setter
+    def id(self, value):
+        """setter"""
+        self.validate_type('id', value)
+        self.validate_xy('id', value)
+
+        self.__id = value
+
