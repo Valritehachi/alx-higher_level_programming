@@ -22,6 +22,19 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def update(self, *args, **kwargs):
+        """Update"""
+        if args and len(args) > 0:
+            attrs = ['id', 'size', 'x', 'y']
+            for i in range(min(len(args), len(attrs))):
+                setattr(self, attrs[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if key in ['id', 'size', 'x', 'y']:
+                    setattr(self, key, value)
+    def to_dictionary(self):
+        """dictionary"""
+        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
     def display(self):
         """display"""
         spaces = [' '] * self.x

@@ -140,5 +140,6 @@ class Rectangle(Base):
         if len(args) == 0:
             return
         self.y = args.pop(0)
-
-
+    def to_dictionary(self):
+        """dictionary"""
+        return {'id': self.id, 'width': self.__width, 'height': self.__height, 'x': self.__x, 'y': self.__y}
