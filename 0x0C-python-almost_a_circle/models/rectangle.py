@@ -86,3 +86,25 @@ class Rectangle(Base):
 
         self.__y = value
 
+    def area(self):
+        """area"""
+        area = self.__height * self.__width
+        return area
+
+    def display(self):
+        """display"""
+        row = ['#'] * self.__width
+        row_str = "".join(row)
+        for i in range(self.__height):
+            print(row_str)
+    
+    def __str__(self):
+        lines = []
+        lines.append("[Rectangle]")
+        id = self.id
+        lines.append(f"({id})")
+        lines.append(f"{self.__x}/{self.__y}")
+        lines.append("-")
+        lines.append(f"{self.__width}/{self.__height}")
+
+        return " ".join(lines)
