@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""shape representation"""
+
 from models.base import Base
 
 class Rectangle(Base):
