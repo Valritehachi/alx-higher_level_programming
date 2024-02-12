@@ -6,12 +6,7 @@ from models.base import Base
 
 class Rectangle(Base):
     """class rectangle
-   
         Args:
-            size (int): The size of the new Square.
-            x (int): The x coordinate of the new Square.
-            y (int): The y coordinate of the new Square.
-            id (int): The identity of the new Square. 
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
