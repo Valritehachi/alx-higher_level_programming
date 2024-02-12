@@ -3,6 +3,7 @@
 
 """Defines unittests for models/square.py."""
 
+
 import io
 import sys
 import unittest
