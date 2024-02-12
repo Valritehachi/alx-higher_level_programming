@@ -3,6 +3,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """class rectangle"""
 
@@ -33,10 +34,12 @@ class Rectangle(Base):
         """validate value"""
         if value <= 0:
             raise ValueError(f"{name} must be > 0")
+
     def validate_xy(self, name, value):
         """validate value"""
         if value < 0:
             raise ValueError(f"{name} must be >= 0")
+
     @property
     def width(self):
         """getter"""
@@ -67,6 +70,7 @@ class Rectangle(Base):
     def x(self):
         """getter"""
         return self.__x
+
     @x.setter
     def x(self, value):
         """setter"""
@@ -103,7 +107,7 @@ class Rectangle(Base):
             print("")
         for i in range(self.__height):
             print(row_str)
-    
+
     def __str__(self):
         """str"""
         lines = []
@@ -116,7 +120,7 @@ class Rectangle(Base):
 
         return " ".join(lines)
 
-    def update (self, *args, **kwargs):
+    def update(self, *args, **kwargs):
         """innitializer"""
         if args and len(args) > 0:
             attrs = ['id', 'width', 'height', 'x', 'y']
