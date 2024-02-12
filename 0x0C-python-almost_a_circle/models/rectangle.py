@@ -116,30 +116,17 @@ class Rectangle(Base):
 
         return " ".join(lines)
 
-    def update (self, *args):
+    def update (self, *args, **kwargs):
         """innitializer"""
-        args = list(args)
+        if args and len(args) > 0:
+            attrs = ['id', 'width', 'height', 'x', 'y']
+            for i in range(min(len(args), len(attrs))):
+                setattr(self, attrs[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if key in ['id', 'width', 'height', 'x', 'y']:
+                    setattr(self, key, value)
 
-        if len(args) == 0:
-            return
-
-        id = args.pop(0)
-        self.id = id
-
-        if len(args) == 0:
-            return 
-
-        self.width = args.pop(0)
-        if len(args) == 0:
-            return
-        self.height = args.pop(0)
-        if len(args) == 0:
-            return
-        self.x = args.pop(0)
-  
-        if len(args) == 0:
-            return
-        self.y = args.pop(0)
     def to_dictionary(self):
         """dictionary"""
         return {'id': self.id, 'width': self.__width, 'height': self.__height, 'x': self.__x, 'y': self.__y}
