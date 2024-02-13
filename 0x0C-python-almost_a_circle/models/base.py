@@ -1,15 +1,20 @@
 #!/usr/bin/python3
-"""class innitializer"""
+"""Module containing the Base class"""
 import json
 import csv
 
 
 class Base:
-    """class base."""
+    """class base for object management."""
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """innitializer"""
+        """Initialize a new Base instance.
+
+        Args:
+            id (int): The identifier for the instance. If not provided,
+                      a unique identifier will be assigned.
+        """
         if id is not None:
             self._id = id
         else:
@@ -23,21 +28,21 @@ class Base:
 
     @id.setter
     def id(self, value):
-        """setter"""
+        """setter method for id attribute"""
         self.validate_type('id', value)
         self.validate_xy('id', value)
 
         self.__id = value
 
     def to_json_string(list_dictionaries):
-        """dictionary"""
+        """dictionary for the json string"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """save to file"""
+        """save to file for class method"""
         my_list = []
         if list_objs is not None:
             my_list = list_objs
@@ -51,7 +56,7 @@ class Base:
             file.write( cls.to_json_string(dicts) )
 
     def from_json_string(json_string):
-        """json"""
+        """json string for class method"""
         if json_string is None or len(json_string) == 0:
             return []
         list_data = json.loads(json_string)
@@ -59,7 +64,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """create"""
+        """create class method for the dictionary"""
         args = (2,2,2)
         obj = cls(*args)
 
@@ -68,7 +73,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """load"""
+        """load class method for the dictionary"""
         file_name = f"{cls.__name__}.json"
 
         objs = []
@@ -80,7 +85,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """save to file"""
+        """save to file for the class method"""
         my_list = []
         if list_objs is not None:
             my_list = list_objs
@@ -98,7 +103,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """load"""
+        """load from file class method"""
         file_name = f"{cls.__name__}.csv"
 
         objs = []
