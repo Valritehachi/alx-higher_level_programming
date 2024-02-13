@@ -50,10 +50,10 @@ class Base:
 
         dicts = []
         for obj in my_list:
-            dicts.append( obj.to_dictionary() )
+            dicts.append(obj.to_dictionary())
 
         with open(file_name, "w") as file:
-            file.write( cls.to_json_string(dicts) )
+            file.write(cls.to_json_string(dicts))
 
     def from_json_string(json_string):
         """json string for class method"""
@@ -65,7 +65,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """create class method for the dictionary"""
-        args = (2,2,2)
+        args = (2, 2, 2)
         obj = cls(*args)
 
         obj.update(**dictionary)
@@ -93,7 +93,7 @@ class Base:
 
         dicts = []
         for obj in my_list:
-            dicts.append( obj.to_dictionary() )
+            dicts.append(obj.to_dictionary())
 
         headers = list(dicts[0].keys())
         with open(file_name, "w", newline='') as file:
@@ -114,6 +114,7 @@ class Base:
                     item[field] = int(item[field])
                 objs.append(cls.create(**item))
         return objs
+
     @staticmethod
     def draw(list_rectangles, list_squares):
         """Draw Rectangles and Squares using the turtle module."""

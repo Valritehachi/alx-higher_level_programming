@@ -18,7 +18,7 @@ class Rectangle(Base):
         Methods:
             area(self): Calculate the area of the rectangle.
             display(self): Display the rectangle with '#' characters.
-            to_dictionary(self): Convert the rectangle to a dictionary representation.
+            to_dictionary(self): Convert.
             """
         self.validate_type('width', width)
         self.validate_value('width', width)

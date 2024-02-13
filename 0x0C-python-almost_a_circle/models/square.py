@@ -15,7 +15,7 @@ class Square(Rectangle):
             id (int): The identifier for the square.
         """
 
-        super().__init__(size, size, x, y,id)
+        super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
@@ -38,9 +38,11 @@ class Square(Rectangle):
             for key, value in kwargs.items():
                 if key in ['id', 'size', 'x', 'y']:
                     setattr(self, key, value)
+
     def to_dictionary(self):
         """dictionary property of the square."""
         return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
+
     def display(self):
         """display property of the square."""
         spaces = [' '] * self.x
@@ -48,9 +50,9 @@ class Square(Rectangle):
         row = spaces + hashes
         row_str = "".join(row)
         for i in range(self.y):
-            print( )
+            print()
         for i in range(self.height):
-            print(" " *self.x + "#" *self.width)
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """string property of the square."""
@@ -63,5 +65,3 @@ class Square(Rectangle):
         lines.append(f"{self.width}")
 
         return " ".join(lines)
-
-
