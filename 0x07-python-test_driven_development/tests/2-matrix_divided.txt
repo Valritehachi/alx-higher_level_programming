@@ -1,0 +1,53 @@
+The ``2-matrix_divided`` module
+======================
+
+Using ``matrix_divided``
+-------------------
+
+Importing the function from the module:
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+divides two integers and returns the result.
+
+Examples:
+# Test case 1: Basic division
+>>> matrix_divided([[10, 20, 30], [40, 50, 60], [70, 80, 90]], 2)
+[[5.0, 10.0, 15.0], [20.0, 25.0, 30.0], [35.0, 40.0, 45.0]]
+
+
+# Test case 2: Division with floating-point numbers
+>>> matrix_divided([[1.5, 2.5, 3.5],[4.5, 5.5, 6.5],[7.5, 8.5, 9.5]], 1.5)
+[[1.0, 1.67, 2.33], [3.0, 3.67, 4.33], [5.0, 5.67, 6.33]]
+
+
+# Test case 3: Division with a different divisor
+>>> matrix_divided([[1, 2],[3, 4],[5, 6]], 3)
+[[0.33, 0.67], [1.0, 1.33], [1.67, 2.0]]
+
+
+# Test case 4: Division by zero (should raise a ZeroDivisionError)
+>>> matrix_divided([[10, 20],[30, 40]], 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+
+# Test case 5: Empty matrix (should raise a TypeError)
+>>> matrix_divided([], 2)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Te:st case 6: Matrix with rows of different lengths (should raise a TypeError)
+>>> matrix_divided([[1, 2, 3],[4, 5],[6, 7, 8]], 3)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+
+# Test case 6: Matrix with rows of different lengths (should raise a TypeError)
+>>> matrix_divided([[1, 2, 3],'A',[6, 7, 8]], 3)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+

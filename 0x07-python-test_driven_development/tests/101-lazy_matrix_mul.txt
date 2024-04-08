@@ -1,0 +1,43 @@
+The ``101-lazy_matrix_mul`` module
+======================
+
+Using ``lazy_matrix_mul``
+-------------------
+
+Importing the function from the module:
+>>> lazy_matrix_mul = __import__("101-lazy_matrix_mul").lazy_matrix_mul
+
+divides two integers and returns the result.
+
+Examples:
+# Test case 1: Basic multiplication
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+[[7, 10], [15, 22]]
+
+# Test case 2: Division with floating-point numbers
+>>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+[[13, 16]]
+
+Test case 5: added none
+>>> lazy_matrix_mul(None, [[1, 2], [3, 4]])
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list or m_b must be a list
+
+Test case 6: none at end of list
+>>> lazy_matrix_mul([[1, 2], [3, 4]], None)
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list or m_b must be a list
+
+Test case 7: added character as string
+>>> lazy_matrix_mul('a', [[1, 2], [3, 4]])
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list
+
+Test case 8: ismatching matrices
+>>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2], [3, 4,]])
+Traceback (most recent call last):
+...
+ValueError: m_a and m_b can't be multiplied

@@ -1,0 +1,118 @@
+Trying:
+    lazy_matrix_mul = __import__("101-lazy_matrix_mul").lazy_matrix_mul
+Expecting nothing
+ok
+Trying:
+    lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+Expecting:
+    [[7, 10], [15, 22]]
+**********************************************************************
+File "./tests/101-lazy_matrix_mul.txt", line 14, in 101-lazy_matrix_mul.txt
+Failed example:
+    lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python3.8/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 101-lazy_matrix_mul.txt[1]>", line 1, in <module>
+        lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+      File "/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 41, in lazy_matrix_mul
+        return array(np.dot(np_m_a, np_m_b))
+    NameError: name 'array' is not defined
+Trying:
+    lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+Expecting:
+    [[13, 16]]
+**********************************************************************
+File "./tests/101-lazy_matrix_mul.txt", line 18, in 101-lazy_matrix_mul.txt
+Failed example:
+    lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/lib/python3.8/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 101-lazy_matrix_mul.txt[2]>", line 1, in <module>
+        lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+      File "/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 41, in lazy_matrix_mul
+        return array(np.dot(np_m_a, np_m_b))
+    NameError: name 'array' is not defined
+Trying:
+    lazy_matrix_mul([[1, 2], [3, 'a']], [[5, 6], [7, 8]])
+Expecting:
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a should contain only integers or floats
+**********************************************************************
+File "./tests/101-lazy_matrix_mul.txt", line 22, in 101-lazy_matrix_mul.txt
+Failed example:
+    lazy_matrix_mul([[1, 2], [3, 'a']], [[5, 6], [7, 8]])
+Expected:
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a should contain only integers or floats
+Got:
+    Traceback (most recent call last):
+      File "/usr/lib/python3.8/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 101-lazy_matrix_mul.txt[3]>", line 1, in <module>
+        lazy_matrix_mul([[1, 2], [3, 'a']], [[5, 6], [7, 8]])
+      File "/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 41, in lazy_matrix_mul
+        return array(np.dot(np_m_a, np_m_b))
+    NameError: name 'array' is not defined
+Trying:
+    lazy_matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 'b']])
+Expecting:
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b should contain only integers or floats
+**********************************************************************
+File "./tests/101-lazy_matrix_mul.txt", line 28, in 101-lazy_matrix_mul.txt
+Failed example:
+    lazy_matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 'b']])
+Expected:
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b should contain only integers or floats
+Got:
+    Traceback (most recent call last):
+      File "/usr/lib/python3.8/doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest 101-lazy_matrix_mul.txt[4]>", line 1, in <module>
+        lazy_matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 'b']])
+      File "/alx-higher_level_programming/0x07-python-test_driven_development/101-lazy_matrix_mul.py", line 41, in lazy_matrix_mul
+        return array(np.dot(np_m_a, np_m_b))
+    NameError: name 'array' is not defined
+Trying:
+    lazy_matrix_mul(None, [[1, 2], [3, 4]])
+Expecting:
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a must be a list or m_b must be a list
+ok
+Trying:
+    lazy_matrix_mul([[1, 2], [3, 4]], None)
+Expecting:
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a must be a list or m_b must be a list
+ok
+Trying:
+    lazy_matrix_mul('a', [[1, 2], [3, 4]])
+Expecting:
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a must be a list
+ok
+Trying:
+    lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2], [3, 4,]])
+Expecting:
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a and m_b can't be multiplied
+ok
+**********************************************************************
+1 items had failures:
+   4 of   9 in 101-lazy_matrix_mul.txt
+9 tests in 1 items.
+5 passed and 4 failed.
+***Test Failed*** 4 failures.
