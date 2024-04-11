@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" gets the first state from a list"""
+"""function dealing with states and cities"""
+
 if __name__ == "__main__":
 
     import sys
@@ -13,8 +14,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     session = Session(engine)
-    for state in session.query(State)\
-                        .filter(State.name.like('%a%'))\
-                        .order_by(State.id):
-        print("{}: {}".format(state.id, state.name))
+    state = session.query(State).filter(State.name == sys.argv[4]).first()
+    if state:
+        print("{}".format(state.id))
+    else:
+        print("Not found")
     session.close()
