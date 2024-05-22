@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-//a java script starwars fucntion code
+//a java script starwars fucntion code.
 
 const request = require('request');
 const fs = require('fs');
